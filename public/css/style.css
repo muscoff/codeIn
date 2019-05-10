@@ -1,0 +1,29 @@
+/* input{
+    width: 20%;
+} */
+
+input[type=text]{
+    width: 90%;
+    height: 30px;
+    border: 1px solid black;
+}
+.toast{
+    position: absolute;
+    right: 5%;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    animation-name: toast;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    box-shadow: 1px 2px 10px 2px grey;
+    border-radius: 2px;
+    /* text-shadow: 1px 1px coral; */
+}
+
+@keyframes toast{
+    0%{top: 80%}
+    100%{top: 10%}
+}

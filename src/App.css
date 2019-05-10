@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +30,202 @@
   to {
     transform: rotate(360deg);
   }
+} */
+*{
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.logo, .static-logo{
+  position: absolute;
+}
+
+.static-logo{
+  width: 10%;
+  left: 25px;
+  top: 25px;
+  z-index: 10;
+}
+
+.logo{
+  width: 10%;
+  animation-name: logo;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.logo img, .static-logo img{
+  width:  100%;
+  border-radius: 5px;
+}
+
+@keyframes logo{
+  0%{top: -100%; left: 25px;}
+  100%{top: 5%; left: 25px;}
+}
+
+.dark-bg{
+  width: 100%;
+  height: 100vh;
+  background-color: coral;
+  overflow: auto;
+}
+
+.welcome{
+  width: 50%;
+  height: 300px;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  overflow: hidden;
+}
+
+.message{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  animation-name: message;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  color: white;
+  font-size: 20px;
+}
+
+@keyframes message{
+  0%{top: 100%}
+  100%{top: 0%}
+}
+
+.nav-link, .nav-static-link{
+  position: absolute;
+  width: 30%;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+
+.nav-link{
+  top: 5%;
+  animation-name: nav;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.nav-static-link{
+  right: 0%;
+  top: 8%;
+  z-index: 10;
+}
+
+@keyframes nav{
+  0%{right: 100%; visibility: hidden;}
+  50%{visibility: hidden;}
+  100%{right: 0%; visibility: visible;}
+}
+
+.nav-link a, .nav-static-link a{
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link ul li, .nav-static-link ul li{
+  display: inline-block;
+  padding-left: 15px;
+  line-height: 30px;
+}
+
+.nav-static-link ul li{
+  line-height: 45px;
+}
+
+.nav-link ul li a:hover, .nav-static-link ul li a:hover{
+  color: coral;
+}
+
+.heading{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+  z-index: 10;
+}
+
+.dark-transparent{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0%;
+  background-color: black;
+  opacity: 0.2;
+}
+
+.reg-form{
+  position: absolute;
+  width: 40%;
+  height: 300px;
+  left: 30%;
+  top: 30%;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid lightblue;
+}
+
+.reg-form label{
+  padding-left: 5%;
+  font-weight: bold;
+}
+
+.mg-l-5{
+  margin-left: 5%;
+}
+
+.reg-form input{
+  width: 90%;
+  height: 35px;
+  margin-left: 5%;
+  padding-left: 2%;
+}
+
+input{
+  width: 50%;
+}
+
+@media(max-width: 320px){
+  .welcome{
+    width: 100%;
+    left: 0%;
+  }
+
+  .message{
+    font-size: 14px;
+  }
+
+  .nav-link{
+    display: none;
+  }
+}
+
+.row{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.col-3{
+  flex-basis: 18%;
+  height: 150px;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.col-3 img{
+  width: 100%;
+  height: 100%;
 }

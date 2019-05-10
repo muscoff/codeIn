@@ -1,26 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import Setup from './RouteSetup/Setup';
 
 class App extends Component {
+  constructor(props){
+    super();
+    this.state = {
+      image: []
+    }
+  }
+
+  componentDidMount(){
+    this.getImages();
+  }
+
+  getImages(){
+		fetch('https://jsonplaceholder.typicode.com/photos')
+		.then(response=>response.json())
+		.then(data=>{
+			let holder = [];
+      this.setState({image: data});
+		});
+  }
+  
   render() {
+    const {image} = this.state;
+    let display = this.state.image.map(url=>{
+      return(
+        <div className="col-3" key={url.id}>
+          <img src={url.url} alt={url.url} />
+        </div>
+      );
+    });
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <div>
+            <div className="row">
+                {display}
+            </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
