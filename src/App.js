@@ -18,14 +18,13 @@ class App extends Component {
 		fetch('https://jsonplaceholder.typicode.com/photos')
 		.then(response=>response.json())
 		.then(data=>{
-			let holder = [];
       this.setState({image: data});
 		});
   }
   
   render() {
     const {image} = this.state;
-    let display = this.state.image.map(url=>{
+    let display = image.map(url=>{
       return(
         <div className="col-3" key={url.id}>
           <img src={url.url} alt={url.url} />
