@@ -23,6 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 
-components
+components/Error.js
+components/Home.js
+
 Javascript
 RouteSetup
